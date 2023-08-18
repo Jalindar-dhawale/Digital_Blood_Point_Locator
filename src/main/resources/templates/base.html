@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="layout(content)">
+<head>
+<meta charset="ISO-8859-1">
+<title>DIGITAL BLOOD POINT LOCATOR</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+	<style>
+		 footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+	</style>
+</head>
+<body class="bg-light">
+
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"><img src="./logo.jpg"width="50" height="40"/>  Digital Blood Point Locator</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/">Home</a></li>
+						<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="about_us">About Us</a></li>
+						<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/">Terms</a></li>
+				</ul>
+				<th:block th:if="${user==NULL}">
+					<ul class="navbar-nav  mb-2 mb-lg-0">
+					
+					<li class="nav-item"><a class="nav-link active" href="register">Sign Up</a></li>
+					<li class="nav-item"><a class="nav-link active" href="signin">User Login</a></li>
+
+				</ul>
+				</th:block>
+				<th:block th:if="${user!=NULL}">
+					
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<li class="nav-item dropdown me-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" >
+         [[${user.fullname}]]
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			  <li><a class="dropdown-item" href="/">Home</a></li>
+            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+            <li><a class="dropdown-item" href="changePass">Change Password</a></li>
+             <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            
+
+
+          </ul>
+        </li>
+					
+
+				</ul>
+				</th:block>
+				
+				
+
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div th:replace="${content}"></div>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+		<footer class="container-fluid">
+    <p>&copy; Digital Blood Point Locator. All rights reserved.</p>
+  </footer>
+</body>
+</html>

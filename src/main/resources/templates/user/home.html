@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+  <head>
+    <meta charset="UTF-8">
+    
+    <title>Welcome User</title>
+    
+    
+  </head>
+  <body>
+	    <h1>User After Login: Home Page</h1>
+	
+	<h1>Name : [[${user.fullname}]]</h1>
+	<h1>Email : [[${user.email}]]</h1>
+	<h1>BloodGroup : [[${user.bloodgroup}]]</h1>
+	  <section>
+
+	
+	
+	
+	<style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+   
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #B30000;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .blood-usage-section {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .usage-item {
+      display: flex;
+      margin-bottom: 1.5rem;
+    }
+
+    .usage-item img {
+      max-width: 100px;
+      margin-right: 1rem;
+      border-radius: 5px;
+    }
+
+    .usage-item h3 {
+      color: #B30000;
+    }
+
+    .usage-item p {
+      flex: 1;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+	.usage-item1 img{
+		max-width: 100px;
+      margin-right: 1rem;
+      border-radius: 5px;
+	}
+	.main-image img{
+		height: 300mm;
+		margin-right: 0%;
+		width: 100%;
+	}
+	
+  </style>
+  <div>
+	       <img src="./homepage.jpg" class="main-img" height="300mm" width="100%"/>
+</div>
+  <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <center>
+                  <h2>Our Features</h2>
+                  <p><b>Our 3 Primary Features -</b></p>
+               </center>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-4">
+               <center>
+                  <img width="150" src="data:image/png;base64,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"/>
+                  <h4>Digital Blood Points</h4>
+                  <p class="text-justify">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+               </center>
+            </div>
+            <div class="col-md-4">
+               <center>
+                  <img width="150" src="data:image/png;base64,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"/>
+  <a href="searchBloodbank"><button type="button" class="btn btn-success">Search Blood Banks</button></a>
+                  <p class="text-justify">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+               </center>
+            </div>
+            <div class="col-md-4">
+               <center>
+                  <img width="150" src="data:image/png;base64,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"/>
+                  <h4>Doners List</h4>
+                  <p class="text-justify">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+               </center>
+            </div>
+         </div>
+      </div>
+   </section>
+   
+   <section>
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <center>
+                  <h2>Our Process</h2>
+                  <p><b>We have a Simple 3 Step Process</b></p>
+               </center>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-4">
+               <center>
+                  <img width="150" src="data:image/png;base64,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" />
+                  <h4>Sign Up</h4>
+                  <p class="text-justify">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+               </center>
+            </div>
+            <div class="col-md-4">
+               <center>
+                  <img width="150" src="data:image/png;base64,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"/>
+                  <h4>Search Blood Bank</h4>
+                  <p class="text-justify">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+               </center>
+            </div>
+            <div class="col-md-4">
+               <center>
+                  <img width="150" src="data:image/png;base64,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"/>
+                  <h4>Donate Blood</h4>
+                  <p class="text-justify">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+               </center>
+            </div>
+         </div>
+      </div>
+	</section>
+  </body>
+</html>
